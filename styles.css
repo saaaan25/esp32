@@ -1,0 +1,170 @@
+@import url('https://unpkg.com/tailwindcss@^2.2.19/dist/tailwind.min.css');
+
+/* Variables de color */
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* Estilos base de TailwindCSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos personalizados */
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Estilos específicos para la página */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('/assets/wallpaper.jpeg'); /* Cambia esta ruta por la de tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.title-container {
+  display: flex;
+  width: 100%;
+  max-width: 1280px;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.description-container {
+  margin-top: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.description-container::before {
+  content: '';
+  position: absolute;
+  height: 300px;
+  width: 100%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, white, transparent);
+  filter: blur(2xl);
+  z-index: -1;
+}
+
+.description-container::after {
+  content: '';
+  position: absolute;
+  height: 180px;
+  width: 100%;
+  transform: translateX(33%);
+  background: conic-gradient(from skyblue, blue 50%);
+  filter: blur(2xl);
+  z-index: -2;
+}
+
+.keyboard-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: end;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 12px;
+  width: 340px;
+  height: 340px;
+}
+
+.column-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+  
+.column-left {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex: 1;
+    margin-right: 20px;
+}
+
+.column-right {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex: 1;
+    margin-left: 20px;
+}
+
+.key {
+  border: 1px solid black;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.key:hover {
+  background-color: black;
+  color: rgb(197, 223, 231);
+}
+
+.start-button-container {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
