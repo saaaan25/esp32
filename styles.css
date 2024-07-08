@@ -41,7 +41,7 @@ body {
 body, html {
   height: 100%;
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-image: url('/assets/wallpaper.jpeg'); /* Cambia esta ruta por la de tu imagen */
   background-size: cover;
   background-position: center;
@@ -155,11 +155,13 @@ body, html {
   width: 100px;
   font-size: 1.5rem;
   font-weight: 600;
+  background-color: black;
+  color: rgb(197, 223, 231);
 }
 
 .key:hover {
-  background-color: black;
-  color: rgb(197, 223, 231);
+  color: black;
+  background-color: rgb(197, 223, 231, 0);
 }
 
 .start-button-container {
